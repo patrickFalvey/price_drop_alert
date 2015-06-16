@@ -1,0 +1,1 @@
+Great News!  This email has been sent to you because you requested to be notified if {{product.model}} drops in price to ${{product.price}}. 
