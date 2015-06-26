@@ -1,12 +1,9 @@
-class Price_Drop_Alert_CronJob(CronJobBase):
+class Command(BaseCommand):
     '''
         Check Price_Alert table twice daily for price drops.
     '''
-    RUN_AT_TIMES = ['06:00', '18:00']
-    schedule = Schedule(run_at_times=RUN_AT_TIMES)
-    code = 'saasapp.views.Price_Drop_Alert_CronJob'
 
-    def do(self):   
+    def handle(self):   
         if Price_Drop_Alert.objects.exist():
             alerts = Price_Drop_Alert.objects.all()
             for alert in alerts:
