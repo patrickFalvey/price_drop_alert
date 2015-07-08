@@ -1,8 +1,9 @@
+from braces.views import LoginRequiredMixin
 from .forms import price_drop_alert_form
 from .models import Price_Drop_Alert
 
-@login_required
-class price_drop_alert_entry(FormView):
+
+class price_drop_alert_entry(LoginRequiredMixin, FormView):
     form_class = price_drop_alert_form
     success_url = "/"
     template = "saas_app/search-result.html"
